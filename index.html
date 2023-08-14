@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naresh Kumar's Portfolio</title>
+
+        <!-- Font Loading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Your-Desired-Font-Here"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Your-Desired-Font-Here" media="print" onload="this.media='all'"/>
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Your-Desired-Font-Here"/>
+    </noscript>
+    
     <style>
         /* Global styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Your-Desired-Font-Here', Arial, sans-serif; /* Use the desired font */
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
@@ -68,7 +77,13 @@
         background-color: #e6f7ff; /* Change this color code */
         }
 
+         </style>
 
+    <!-- Add the Material Design Bootstrap CSS link here -->
+    <link href="https://cdn.jsdelivr.net/npm/mdb@5.5.1/dist/css/mdb.min.css" rel="stylesheet">
+    
+    </head>
+    <body>
         
         .experience-item {
             margin-bottom: 1.5rem;
@@ -98,6 +113,18 @@
         <a href="#education">Education</a>
         <a href="#achievements">Achievements</a>
         <a href="#current-projects">Current Projects</a>
+                <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/your-twitter-profile" title="Twitter">
+                <i class="fab fa-twitter"></i>
+                <span class="menu-title sr-only">Twitter</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/your-facebook-profile" title="Facebook">
+                <i class="fab fa-facebook"></i>
+                <span class="menu-title sr-only">Facebook</span>
+            </a>
+            
     </nav>
     <div class="container">
         <section class="section" id="experience">
@@ -139,6 +166,7 @@
             <li> * Worked throughout 2 project lifecycle of quads from Design Phase to EOL.</li>
       
         </ul>
+                     </div> 
             
             <!-- Add more experience items -->
         </section>
