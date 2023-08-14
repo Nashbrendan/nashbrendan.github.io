@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +6,10 @@
     <title>Naresh Kumar's Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
         header, nav {
             background: #50b3a2;
@@ -19,6 +20,7 @@
             display: flex;
             justify-content: center;
             background: #333;
+            border-bottom: 2px solid #50b3a2;
         }
         nav a {
             color: white;
@@ -26,29 +28,43 @@
             text-decoration: none;
             text-align: center;
             flex-grow: 1;
+            transition: background-color 0.3s, color 0.3s;
         }
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #50b3a2;
+            color: white;
         }
         .container {
             padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        h2 {
-            color: #333;
+        h1, h2, h3 {
+            color: #50b3a2;
         }
         a {
             color: #50b3a2;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #333;
         }
         ul {
-            list-style-type: none;
-            padding-left: 0;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        section h3 {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Naresh Kumar </h1>
+        <h1>Naresh Kumar</h1>
         <p><a href="mailto:nkncku@gmail.com">nkncku@gmail.com</a> | <a href="tel:+886981800493">(+886) 981800493</a> | <a href="https://linkedin.com/in/nashbrendan/" target="_blank">LinkedIn</a> | New Taipei, Taiwan</p>
     </header>
     <nav>
@@ -56,7 +72,7 @@
         <a href="#expertise">Expertise</a>
         <a href="#education">Education</a>
         <a href="#achievements">Achievements</a>
-        <a href="#current projects">Current Projects</a>
+        <a href="#current-projects">Current Projects</a>
     </nav>
     <div class="container">
         <section id="experience">
@@ -67,13 +83,10 @@
             <ul>
                 <li>Managed 4+ NPI projects as TPM on Next generation Thermal Cooling Technologies </li>
                 <li>Overseen 2 Major factory transition from initial factory setup to production line development </li>
-                </li>Overseen & approved 40+ Process optimization methodologies </li>
-                </li>Devised and executed optimized plans for cycle time reduction during the ramp up phase</li>
-                </li>Act as a VOC for the internal product development team in developing complex thermal modules to meet the design of excellence</li>
-                </li>Led 55+ FACA discussion combining both internal & external case studies</li>
-
-
-                
+                <li>Overseen & approved 40+ Process optimization methodologies </li>
+                <li>Devised and executed optimized plans for cycle time reduction during the ramp up phase</li>
+                <li>Act as a VOC for the internal product development team in developing complex thermal modules to meet the design of excellence</li>
+                <li>Led 55+ FACA discussion combining both internal & external case studies</li>
                 <!-- Add other key points here -->
             </ul>
             <!-- Wisdom Marine -->
