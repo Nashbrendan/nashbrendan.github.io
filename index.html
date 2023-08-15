@@ -94,6 +94,14 @@
             border-bottom: none;
         }
 
+body {
+    background-color: #E8DAEF; /* Add your desired background color */
+}
+
+
+
+
+        
 /* Adjust styles for screens smaller than 768px (typical tablet size) */
 @media (max-width: 768px) {
     /* Add your mobile-specific styles here */
@@ -105,6 +113,7 @@
         padding: 1.5rem;
     }
 }
+
         
     </style>
 
@@ -250,5 +259,42 @@
         
         <!-- Add more sections -->
     </div>
+
+
+
+              <script>
+        // JavaScript code for handling page navigation and section visibility
+
+        // Get references to all sections
+        const sections = document.querySelectorAll('.section');
+
+        // Initially hide all sections except the first one
+        sections.forEach((section, index) => {
+            if (index > 0) {
+                section.style.display = 'none';
+            }
+        });
+
+        // Function to show selected section and hide others
+        function showSection(sectionId) {
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        // Add click event listeners to navigation links
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault(); // Prevent default link behavior
+                const targetSection = event.target.getAttribute('href').substring(1);
+                showSection(targetSection);
+            });
+        });
+    </script>
 </body>
 </html>
