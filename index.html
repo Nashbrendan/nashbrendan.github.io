@@ -134,16 +134,7 @@ body {
     }
 }
 
-            /* Add a smooth transition effect to the section content */
-.section-content {
-    opacity: 0; /* Initially set the opacity to 0 */
-    transition: opacity 1s; /* Set a transition effect with a duration of 1 second */
-}
 
-/* Show the section content when the section is in focus */
-#current-projects:focus .section-content {
-    opacity: 1;
-}
 
 
 /* In the <style> section of your <head> */
@@ -153,6 +144,35 @@ nav a.active {
     text-decoration: underline;
 }
 
+            /* Add smooth transition between sections */
+    .section {
+        opacity: 0;
+        transition: opacity 1s;
+        position: absolute;
+        width: 100%;
+    }
+
+    /* Define keyframes for the animation */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Apply animation to active section */
+    .section.active {
+        animation: fadeIn 1s ease-in-out forwards;
+        position: relative;
+    }
+
+    /* Style for active navigation link */
+    nav a.active {
+        color: #50b3a2; /* Change to your desired active link color */
+        text-decoration: underline;
+    }
         
     </style>
 
@@ -172,13 +192,13 @@ nav a.active {
             New Taipei, Taiwan
         </p>
     </header>
-    <nav>
-        <a href="#experience">Experience</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#education">Education</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#current-projects">Current Projects</a>
-    </nav>
+<nav>
+    <a data-target="experience">Experience</a>
+    <a data-target="expertise">Expertise</a>
+    <a data-target="education">Education</a>
+    <a data-target="achievements">Achievements</a>
+    <a data-target="current-projects">Current Projects</a>
+</nav>
     
     <div class="container">
       
@@ -186,7 +206,7 @@ nav a.active {
          
          
             <h2>Professional Experience</h2>
-             <div class="experience-item">
+
                 <h3>Cooler Master, Taipei, Taiwan</h3>
                 <p><strong>TPM | QPM</strong> | Jan 2021–Present</p>
                 <div class="spacing">
@@ -205,7 +225,7 @@ nav a.active {
      </section>
       
         <section class="section" id="experience">
-        <div class="experience-item">
+
             
         <h3>Wisdom Marine (Genius star), Taipei, Taiwan</h3>
         <p><strong>Research & Development Engineer</strong> | Jan 2019–Dec 2020</p>
@@ -221,7 +241,7 @@ nav a.active {
         </section>
          
         <section class="section" id="experience">
-        <div class="experience-item">
+     
         
         <h3>Armattan Quads, Kaoshuing, Taiwan</h3>
         <p><strong>Engineer</strong> | Mar 2016–Oct 2018</p>
@@ -268,13 +288,13 @@ nav a.active {
 <section class="section" id="education">
     <h2>Education</h2>
     
-    <div class="education-item">
+
         <h3>National Cheng Kung University</h3>
         <p><strong>Masters of Science in Aerospace Engineering</strong></p>
         <p>Tainan, Taiwan</p>
     </div>
     
-    <div class="education-item">
+
         <h3>Vel Tech University</h3>
         <p><strong>Bachelors of Technology in Aeronautical Engineering</strong></p>
         <p>Chennai, India</p>
@@ -300,7 +320,7 @@ nav a.active {
         
 
 <section class="section" id="current-projects">
-    <div class="section-content">
+
         <h2>Current Projects</h2>
         <div class="spacing">
             <ul>
@@ -320,17 +340,34 @@ nav a.active {
 
 
   <script>
-// JavaScript code for handling page navigation and section visibility
 
-// Get references to all sections
-const sections = document.querySelectorAll('.section');
+
+// JavaScript code for handling navigation animation
 const navLinks = document.querySelectorAll('nav a');
 
-// Initially hide all sections except the first one
-sections.forEach((section, index) => {
-    if (index > 0) {
-        section.style.display = 'none';
-    }
+navLinks.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+
+        // Remove active class from all links
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Add active class to the clicked link
+        event.target.classList.add('active');
+
+        // Get the target section ID
+        const targetSectionId = event.target.getAttribute('data-target');
+
+        // Remove active class from all sections
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Add active class to the target section
+        document.getElementById(targetSectionId).classList.add('active');
+    });
 });
 
 // Function to show selected section and hide others
