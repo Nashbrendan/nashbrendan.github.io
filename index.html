@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
 
-<link href="css/aos.css?ver=1.2.1" rel="stylesheet">
-<script src="scripts/aos.js?ver=1.2.1"></script>
-
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,13 +132,20 @@ body {
     }
 }
 
+            /* Add a smooth transition effect to the section content */
+.section-content {
+    opacity: 0; /* Initially set the opacity to 0 */
+    transition: opacity 1s; /* Set a transition effect with a duration of 1 second */
+}
+
+/* Show the section content when the section is in focus */
+#current-projects:focus .section-content {
+    opacity: 1;
+}
         
     </style>
 
-    
-    <script>
-        AOS.init();
-    </script>
+
     
 </head>
 
@@ -284,7 +288,7 @@ body {
         
 
 <section class="section" id="current-projects">
-    <div data-aos="fade-up" data-aos-duration="1000">
+    <div class="section-content">
         <h2>Current Projects</h2>
         <div class="spacing">
             <ul>
