@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 
+<link href="css/aos.css?ver=1.2.1" rel="stylesheet">
+<script src="scripts/aos.js?ver=1.2.1"></script>
+
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,7 +137,12 @@ body {
 
         
     </style>
-  
+
+    
+    <script>
+        AOS.init();
+    </script>
+    
 </head>
 
     
@@ -272,22 +280,21 @@ body {
     </ul>
 </section>
 
-<section class="section" id="current-projects">
-    
 
-    
-    <h2>Current Projects</h2>
-    <div class="spacing">
-    <ul>
-        <li> * Managing project portfolio for thermal management solutions on data center applications.</li>
-        <li> * NPI projects experience with fortune 100 companies.</li>
-        <li> * Customer Champion, Maintaining direct relationship with key stakeholders.</li>
-        <li> * Acted as an TPM for $45M cooling solution projects in Y2022.</li>
-        <li> * Technical advisor for Internal cross functional teams.</li>
-    </ul>
-</div>
-</section>
         
+
+        <section class="section" id="current-projects">
+    <h2 data-aos="fade-up" data-aos-duration="1000">Current Projects</h2>
+    <div class="spacing">
+        <ul data-aos="fade-up" data-aos-duration="1000">
+            <li> * Managing project portfolio for thermal management solutions on data center applications.</li>
+            <li> * NPI projects experience with fortune 100 companies.</li>
+            <li> * Customer Champion, Maintaining direct relationship with key stakeholders.</li>
+            <li> * Acted as an TPM for $45M cooling solution projects in Y2022.</li>
+            <li> * Technical advisor for Internal cross functional teams.</li>
+        </ul>
+    </div>
+</section>
         
         <!-- Add more sections -->
     </div>
@@ -328,5 +335,6 @@ body {
             });
         });
     </script>
+    
 </body>
 </html>
