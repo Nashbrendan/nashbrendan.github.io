@@ -9,8 +9,10 @@
 
         <!-- Font Loading -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Your-Desired-Font-Here"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Your-Desired-Font-Here" media="print" onload="this.media='all'"/>
+    <!-- Preload and apply Poppins font for headings (for example) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins"/>
+    <!-- Load and apply Roboto font for the entire body of the website -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto" media="print" onload="this.media='all'"/>
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Your-Desired-Font-Here"/>
     </noscript>
@@ -24,7 +26,7 @@
             background-color: #f9f9f9;
         }
         header {
-            background: #333;
+            background: #6B5B95;
             color: white;
             text-align: center;
             padding: 1rem 0;
@@ -142,12 +144,22 @@ body {
 #current-projects:focus .section-content {
     opacity: 1;
 }
+
+
+/* In the <style> section of your <head> */
+/* Style for active navigation link */
+nav a.active {
+    color: #50b3a2; /* Change to your desired active link color */
+    text-decoration: underline;
+}
+
         
     </style>
 
 
     
 </head>
+</html>
 
     
 <body>
@@ -307,40 +319,48 @@ body {
 
 
 
-        <script>
-        // JavaScript code for handling page navigation and section visibility
+  <script>
+// JavaScript code for handling page navigation and section visibility
 
-        // Get references to all sections
-        const sections = document.querySelectorAll('.section');
+// Get references to all sections
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('nav a');
 
-        // Initially hide all sections except the first one
-        sections.forEach((section, index) => {
-            if (index > 0) {
-                section.style.display = 'none';
-            }
-        });
+// Initially hide all sections except the first one
+sections.forEach((section, index) => {
+    if (index > 0) {
+        section.style.display = 'none';
+    }
+});
 
-        // Function to show selected section and hide others
-        function showSection(sectionId) {
-            sections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
-            });
+// Function to show selected section and hide others
+function showSection(sectionId) {
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
         }
+    });
+}
 
-        // Add click event listeners to navigation links
-        const navLinks = document.querySelectorAll('nav a');
+// Add click event listeners to navigation links
+navLinks.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault(); // Prevent default link behavior
+        const targetSection = event.target.getAttribute('href').substring(1);
+        showSection(targetSection);
+
+        // Remove active class from all links
         navLinks.forEach(link => {
-            link.addEventListener('click', event => {
-                event.preventDefault(); // Prevent default link behavior
-                const targetSection = event.target.getAttribute('href').substring(1);
-                showSection(targetSection);
-            });
+            link.classList.remove('active');
         });
-    </script>
+
+        // Add active class to the clicked link
+        event.target.classList.add('active');
+    });
+});
+</script>
     
 </body>
 </html>
