@@ -103,6 +103,22 @@ body {
 
 
 
+
+/* Add spacing between experience and education items */
+.experience-item,
+.education-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.experience-item:last-child,
+.education-item:last-child {
+    border-bottom: none;
+}
+
+        
+
         
 /* Adjust styles for screens smaller than 768px (typical tablet size) */
 @media (max-width: 768px) {
@@ -146,6 +162,7 @@ body {
          
          
             <h2>Professional Experience</h2>
+             <div class="experience-item">
                 <h3>Cooler Master, Taipei, Taiwan</h3>
                 <p><strong>TPM | QPM</strong> | Jan 2021–Present</p>
                 <div class="spacing">
@@ -161,8 +178,11 @@ body {
                     <li> * Fostered a culture of robust & comprehensive documentation both internally and externally reducing a number of customer support requests by 45% last year.</li>
                 </ul>
                 </div>
+     </section>
       
-
+        <section class="section" id="experience">
+        <div class="experience-item">
+            
         <h3>Wisdom Marine (Genius star), Taipei, Taiwan</h3>
         <p><strong>Research & Development Engineer</strong> | Jan 2019–Dec 2020</p>
              <div class="spacing">
@@ -174,8 +194,11 @@ body {
             <li> * Developed a green energy shipping model which saves 5.5% annual energy.</li>
         </ul>
             </div>
+        </section>
          
-
+        <section class="section" id="experience">
+        <div class="experience-item">
+        
         <h3>Armattan Quads, Kaoshuing, Taiwan</h3>
         <p><strong>Engineer</strong> | Mar 2016–Oct 2018</p>
         <div class="spacing">
@@ -190,11 +213,9 @@ body {
             
         </section>
 
-<section class="section" id="expertise">
-        
+<section class="section" id="expertise">       
 
-            
-    <h2>Expertise</h2>
+         <h2>Expertise</h2>
         <div class="spacing">
     <ul>
         <li> * Managing project portfolio for thermal management solutions on data center applications</li>
@@ -221,21 +242,21 @@ body {
 
 
 <section class="section" id="education">
-
-    
     <h2>Education</h2>
-
-        <p><strong>National Cheng Kung University</strong></p>
-        <p>Masters of Science in Aerospace Engineering</p>
+    
+    <div class="education-item">
+        <h3>National Cheng Kung University</h3>
+        <p><strong>Masters of Science in Aerospace Engineering</strong></p>
         <p>Tainan, Taiwan</p>
     </div>
-
-
-        <p><strong>Vel Tech University</strong></p>
-        <p>Bachelors of Technology in Aeronautical Engineering</p>
+    
+    <div class="education-item">
+        <h3>Vel Tech University</h3>
+        <p><strong>Bachelors of Technology in Aeronautical Engineering</strong></p>
         <p>Chennai, India</p>
     </div>
 </section>
+
                
     
 
