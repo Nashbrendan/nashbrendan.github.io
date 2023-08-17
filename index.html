@@ -138,29 +138,8 @@ nav a.active {
         width: 100%;
     }
 
-    /* Define keyframes for the animation */
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
 
-    /* Apply animation to active section */
-    .section.active {
-        animation: fadeIn 1.5s ease-in-out forwards;
-        position: relative;
-    }
-
-    /* Style for active navigation link */
-    nav a.active {
-        color: #50b3a2; /* Change to your desired active link color */
-        text-decoration: underline;
-    }
-
-        @keyframes floatIn {
+                @keyframes floatIn {
     0% {
         opacity: 0;
         transform: translateY(50px); /* Start slightly below the viewport */
@@ -175,6 +154,20 @@ nav a.active {
     /* Other styles... */
     animation: floatIn 1s ease-in-out forwards;
 }
+
+    /* Apply animation to active section */
+    .section.active {
+        animation: fadeIn 1.5s ease-in-out forwards;
+        position: relative;
+    }
+
+    /* Style for active navigation link */
+    nav a.active {
+        color: #50b3a2; /* Change to your desired active link color */
+        text-decoration: underline;
+    }
+
+
         
     </style>
 
