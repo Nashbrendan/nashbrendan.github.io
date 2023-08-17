@@ -138,22 +138,17 @@ nav a.active {
         width: 100%;
     }
 
-
-                @keyframes floatIn {
-    0% {
-        opacity: 0;
-        transform: translateY(50px); /* Start slightly below the viewport */
+    /* Define keyframes for the animation */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0); /* Float to the final position */
-    }
-}
 
-.section {
-    /* Other styles... */
-    animation: floatIn 1s ease-in-out forwards;
-}
+
 
     /* Apply animation to active section */
     .section.active {
