@@ -44,7 +44,7 @@
             margin: 0 auto;
             padding: 2rem;
             background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         h1 {
             margin-bottom: 2rem;
@@ -81,11 +81,11 @@
             background-color: #E8F8F5; /* Change this color code */
         }
 
-            /* Add spacing between lines in the achievements section */
-    .spacing ul li {
-        margin-bottom: 1.5rem; /* Adjust the spacing as needed */
-    }
 
+/* Reset margins for ul elements inside .spacing */
+.spacing ul {
+    margin: 0;
+}
 
         /* Experience item styles */
         .experience-item {
@@ -127,10 +127,10 @@ body {
     /* Add your mobile-specific styles here */
     /* For example, adjust font sizes, margins, and padding */
     body {
-        font-size: 16px;
+        font-size: 12px;
     }
     .section {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 }
 
@@ -147,7 +147,7 @@ nav a.active {
             /* Add smooth transition between sections */
     .section {
         opacity: 0;
-        transition: opacity 1s;
+        transition: opacity 2s;
         position: absolute;
         width: 100%;
     }
@@ -164,7 +164,7 @@ nav a.active {
 
     /* Apply animation to active section */
     .section.active {
-        animation: fadeIn 1s ease-in-out forwards;
+        animation: fadeIn 2s ease-in-out forwards;
         position: relative;
     }
 
