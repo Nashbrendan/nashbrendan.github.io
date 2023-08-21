@@ -108,57 +108,83 @@
             }
         }
 
+
+/* Add spacing between lines in the achievements section */
+.spacing ul li {
+    margin-bottom: 1.5rem;
+}
+
+         /* Experience item styles */
+.experience-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.experience-item:last-child {
+    border-bottom: none;
+}
+         /* Add spacing between experience and education items */
+.experience-item,
+.education-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.experience-item:last-child,
+.education-item:last-child {
+    border-bottom: none;
+}
+
+         /* Style for the About Me section */
+#about .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about img {
+    max-width: 20%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+         /* Style for the Current Projects section */
+#current-projects .current-projects-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+#current-projects .current-projects-item:last-child {
+    border-bottom: none;
+}
+
+
+         
               /* Style for active navigation link */
         nav a.active {
             color: #50b3a2;
             text-decoration: underline;
         }
 
-        /* Add smooth transition between sections */
-        .section {
-            opacity: 0;
-            transition: opacity 1.5s;
-            position: absolute;
-            width: 100%;
-        }
+/* Add smooth transition between sections */
+.section {
+    opacity: 0;
+    visibility: hidden; /* Initially hide the sections */
+    transition: opacity 1.5s;
+    width: 100%;
+}
 
-        /* Define keyframes for the animation */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* Apply animation to active section */
-        .section.active {
-            animation: fadeIn 1.5s ease-in-out forwards;
-            position: relative;
-                display: block; /* Show the active section */
-        }
+/* Apply animation to active section */
+.section.active {
+    opacity: 1;
+    visibility: visible; /* Make the section visible */
+}
+         
 
 
-
-        /* Make the image responsive */
-        img {
-            max-width: 20%;
-            height: auto;
-        }
-
-        /* Style for the About Me section */
-        #about .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #about img {
-            max-width: 20%;
-            height: auto;
-            margin-bottom: 2rem;
-        }
     </style>
 </head>
 
