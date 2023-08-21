@@ -147,6 +147,7 @@
         .section.active {
             animation: fadeIn 1.5s ease-in-out forwards;
             position: relative;
+                display: block; /* Show the active section */
         }
 
 
@@ -385,36 +386,35 @@
 
 
 
-  <script>
-        // JavaScript code for handling navigation animation
-        const navLinks = document.querySelectorAll('nav a');
-        const sections = document.querySelectorAll('.section');
+<script>
+    // JavaScript code for handling navigation animation
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('.section');
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', event => {
-                event.preventDefault();
+    navLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
 
-                // Remove active class from all links
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-
-                // Add active class to the clicked link
-                event.target.classList.add('active');
-
-                // Get the target section ID
-                const targetSectionId = event.target.getAttribute('data-target');
-
-                // Remove active class from all sections
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                });
-
-                // Add active class to the target section
-                document.getElementById(targetSectionId).classList.add('active');
+            // Hide all sections
+            sections.forEach(section => {
+                section.style.display = 'none';
             });
+
+            // Show the target section
+            const targetSectionId = event.target.getAttribute('data-target');
+            document.getElementById(targetSectionId).style.display = 'block';
+
+            // Remove active class from all links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add active class to the clicked link
+            event.target.classList.add('active');
         });
-    </script>
+    });
+</script>
+                             
 </body>
 </html>
 
