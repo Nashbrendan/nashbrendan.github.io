@@ -1,12 +1,9 @@
-User
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>Naresh Kumar's Portfolio</title>
 
     <!-- Font Loading -->
@@ -42,13 +39,13 @@ User
             justify-content: space-around;
         }
 
-          .container {
-              max-width: 100%; /* Change to 100% to fill the available space */
-              margin: 0 auto; /* Center-align the content horizontally */
-              padding: 2rem;
-              background-color: white;
-              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-          }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
         h1 {
             margin-bottom: 1rem;
@@ -93,102 +90,87 @@ User
             background-color: #E8F8F5;
         }
 
-
-                 /* Adjust styles for screens smaller than 480px (typical mobile size) */
-        @media (max-width: 480px) {
-            body {
-                font-size: 14px;
-            }
-
-            .container {
-                padding: 1rem;
-            }
-
-            .section {
-                padding: 1rem;
-            }
+        /* Add spacing between lines in the achievements section */
+        .spacing ul li {
+            margin-bottom: 1.5rem;
         }
 
+        /* Experience item styles */
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #ddd;
+        }
 
-/* Add spacing between lines in the achievements section */
-.spacing ul li {
-    margin-bottom: 1.5rem;
-}
+        .experience-item:last-child {
+            border-bottom: none;
+        }
 
-         /* Experience item styles */
-.experience-item {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #ddd;
-}
+        /* Add spacing between experience and education items */
+        .experience-item,
+        .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
 
-.experience-item:last-child {
-    border-bottom: none;
-}
-         /* Add spacing between experience and education items */
-.experience-item,
-.education-item {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #ddd;
-}
+        .experience-item:last-child,
+        .education-item:last-child {
+            border-bottom: none;
+        }
 
-.experience-item:last-child,
-.education-item:last-child {
-    border-bottom: none;
-}
-
-         /* Style for the About Me section */
-#about .about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#about img {
-    max-width: 20%;
-    height: auto;
-    margin-bottom: 2rem;
-}
-
-         /* Style for the Current Projects section */
-#current-projects .current-projects-item {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #ddd;
-}
-
-#current-projects .current-projects-item:last-child {
-    border-bottom: none;
-}
-
-
-         
-              /* Style for active navigation link */
+        /* Style for active navigation link */
         nav a.active {
             color: #50b3a2;
             text-decoration: underline;
         }
 
-/* Add smooth transition between sections */
-.section {
-    opacity: 0;
-    visibility: hidden; /* Initially hide the sections */
-    transition: opacity 1.5s;
-    width: 100%;
-}
+        /* Add smooth transition between sections */
+        .section {
+            opacity: 0;
+            transition: opacity 1.5s;
+            position: absolute;
+            width: 100%;
+        }
 
-/* Apply animation to active section */
-.section.active {
-    opacity: 1;
-    visibility: visible; /* Make the section visible */
-}
-         
+        /* Define keyframes for the animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Apply animation to active section */
+        .section.active {
+            animation: fadeIn 1.5s ease-in-out forwards;
+            position: relative;
+        }
 
 
+
+        /* Make the image responsive */
+        img {
+            max-width: 20%;
+            height: auto;
+        }
+
+        /* Style for the About Me section */
+        #about .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #about img {
+            max-width: 20%;
+            height: auto;
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
-</html>
 
 
 
@@ -233,7 +215,6 @@ User
             <li>&#8226; Overall, I am a results-driven professional committed to delivering successful outcomes and contributing to the growth and success of organizations.</li>
             </ul>
         </div>
-        </div>
     </section>
 
              
@@ -258,7 +239,6 @@ User
                     <li>&#45; Fostered a culture of robust & comprehensive documentation both internally and externally reducing a number of customer support requests by 45% last year.</li>
                 </ul>
                 </div>
-                             </div>
 <br>
                                  <br>
                                  <br>
@@ -337,54 +317,49 @@ User
 
 <section class="section" id="education">
     <h2>Education</h2>
-     <div class="education-item">
-     <h3>National Cheng Kung University</h3>
-     <p><strong>Masters of Science in Aerospace Engineering</strong></p>
-     <p>Tainan, Taiwan</p>
-          
-    <h3> Research Projects</h3>
-     <div class="spacing">
-     <ul>
-     <li>&#9733; Measurement of fuel centered keroscene/N2O coaxial injector with cold flow & hot fire testing</li>
-     <li>&#9733; Numerical analysis on combustion characterization of gas centered swirl coaxial injector</li>
-     </ul>
+                 <div class="education-item">
+
+        <h3>National Cheng Kung University</h3>
+        <p><strong>Masters of Science in Aerospace Engineering</strong></p>
+        <p>Tainan, Taiwan</p>
+        <h3> Research Projects</h3>
+                       <div class="spacing">
+                     <ul>
+        <li>&#9658; Measurement of fuel centered keroscene/N2O coaxial injector with cold flow & hot fire testing</li>
+        <li>&#9658; Numerical analysis on combustion characterization of gas centered swirl coaxial injector</li>
+                     </ul>
     </div>
-     </div>
                      <br>
                      <br>
-                     <br> 
-     <div class="education-item">
-     <h3>Vel Tech University</h3>
-     <p><strong>Bachelors of Technology in Aeronautical Engineering</strong></p>
-     <p>Chennai, India</p>
-     <h3> Research Projects</h3>
-     <div class="spacing">
-     <ul>
+    <br> 
+             <div class="education-item">
+        <h3>Vel Tech University</h3>
+        <p><strong>Bachelors of Technology in Aeronautical Engineering</strong></p>
+        <p>Chennai, India</p>
+         <h3> Research Projects</h3>
+                   <div class="spacing">
+        <ul>
         <li>&#9658; Design, Modelling, Fabrication & Testing of hybrid rocket engine</li>
         <li>&#9658; Preliminary Design of a turbine for energy recovery system for ballistic missle</li>
         <li>&#9658; CFD analysis of Drag reduction on heavy automobiles using rotary cylinders</li>
         <li>&#9658; Experimental study of passive damping techniques in Liquid rocket system </li>
         </ul>
     </div>
-     </div>
-          
 </section>
 
                
     
 
-<section class="section" id="achievements">            
- <div class="achievements-item">
+<section class="section" id="achievements">
+            
+                         <div class="achievements-item">
     <h2>Achievements</h2>
-     <div class="spacing">
+            <div class="spacing">
     <ul>
-        <li>&#9733; Led the first Green ENERGY projects for shipping vessels in Taiwan in 2019.</li>
-        <li>&#9733; Simulated the first scrubber installation in the Taiwan shipping industry. (installed in 2020)</li>
-        <li>&#9733; Six Sigma Black Belt Affidavit approved with just 1 year of TPM experience by resolving 2 on field quality issues during 2021-2022.</li>
+        <li> * Led the first Green ENERGY projects for shipping vessels in Taiwan in 2019.</li>
+        <li> * Simulated the first scrubber installation in the Taiwan shipping industry. (installed in 2020)</li>
+        <li> * Six Sigma Black Belt Affidavit approved with just 1 year of TPM experience by resolving 2 on field quality issues during 2021-2022.</li>
     </ul>
-     </div>
-      </div>
-     
 </section>
 
 
@@ -406,38 +381,39 @@ User
 </section>
         
         <!-- Add more sections -->
+    </div>
 
 
 
+  <script>
+        // JavaScript code for handling navigation animation
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('.section');
 
-<script>
-    // JavaScript code for handling navigation animation
-    const navLinks = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('.section');
+        navLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', event => {
-            event.preventDefault();
+                // Remove active class from all links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
 
-            // Hide all sections
-            sections.forEach(section => {
-                section.style.display = 'none';
+                // Add active class to the clicked link
+                event.target.classList.add('active');
+
+                // Get the target section ID
+                const targetSectionId = event.target.getAttribute('data-target');
+
+                // Remove active class from all sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Add active class to the target section
+                document.getElementById(targetSectionId).classList.add('active');
             });
-
-            // Show the target section
-            const targetSectionId = event.target.getAttribute('data-target');
-            document.getElementById(targetSectionId).style.display = 'block';
-
-            // Remove active class from all links
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-
-            // Add active class to the clicked link
-            event.target.classList.add('active');
         });
-    });
-</script>
-                             
+    </script>
 </body>
 </html>
