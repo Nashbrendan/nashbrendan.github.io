@@ -3,11 +3,9 @@
 <head>
     
     <meta charset="UTF-8">
-  
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title>Naresh Kumar's Portfolio</title>
 
         <!-- Font Loading -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
@@ -45,9 +43,27 @@
         }
 
 
+ /* Style for the About Me section */
+        #about .about-content {
+            display: grid;
+            grid-template-columns: 20% auto; /* Adjust the width of the image column as needed */
+            gap: 2rem; /* Add some spacing between the image and text */
+            align-items: start; /* Align items at the top of the grid */
+        }
+
+        #about img {
+            max-width: 100%; /* Make the image responsive */
+            height: auto;
+        }
+
+        /* Style for the About Me text */
+        .about-text ul {
+            list-style-type: disc; /* Use bullets for the list items */
+            padding-left: 1.5rem; /* Add some spacing for better readability */
+        }
 
 
-
+        
         
         /* Global styles */
         body {
@@ -236,7 +252,11 @@ nav a.active {
     <section class="section" id="about">
         <h2>About me</h2>
         <div class="about-item">
+            <div class="about-image">
             <img src="https://github.com/Nashbrendan/nashbrendan.github.io/blob/main/Portfolio%20Images/20220917_174418.jpg?raw=true">
+                 </div>
+            
+             <div class="about-text">
             <div class="spacing">
 
             <ul> 
