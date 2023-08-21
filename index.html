@@ -92,36 +92,23 @@
             background-color: #E8F8F5;
         }
 
-        /* Add spacing between lines in the achievements section */
-        .spacing ul li {
-            margin-bottom: 1.5rem;
+
+                 /* Adjust styles for screens smaller than 480px (typical mobile size) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
         }
 
-        /* Experience item styles */
-        .experience-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        /* Add spacing between experience and education items */
-        .experience-item,
-        .education-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .experience-item:last-child,
-        .education-item:last-child {
-            border-bottom: none;
-        }
-
-        /* Style for active navigation link */
+              /* Style for active navigation link */
         nav a.active {
             color: #50b3a2;
             text-decoration: underline;
