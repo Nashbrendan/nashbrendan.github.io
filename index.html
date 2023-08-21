@@ -108,35 +108,57 @@
             }
         }
 
+/* Add spacing between lines in the achievements section */
+.spacing ul li {
+    margin-bottom: 1.5rem;
+}
 
-  /* Add spacing between lines in the achievements section */
-        .spacing ul li {
-            margin-bottom: 1.5rem;
-        }
+         /* Experience item styles */
+.experience-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
 
-        /* Experience item styles */
-        .experience-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #ddd;
-        }
+.experience-item:last-child {
+    border-bottom: none;
+}
+         /* Add spacing between experience and education items */
+.experience-item,
+.education-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
 
-        .experience-item:last-child {
-            border-bottom: none;
-        }
+.experience-item:last-child,
+.education-item:last-child {
+    border-bottom: none;
+}
 
-        /* Add spacing between experience and education items */
-        .experience-item,
-        .education-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #ddd;
-        }
+         /* Style for the About Me section */
+#about .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .experience-item:last-child,
-        .education-item:last-child {
-            border-bottom: none;
-        }
+#about img {
+    max-width: 20%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+         /* Style for the Current Projects section */
+#current-projects .current-projects-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+#current-projects .current-projects-item:last-child {
+    border-bottom: none;
+}
 
 
          
@@ -181,12 +203,12 @@
         </p>
     </header>
 <nav>
-    <a data-target="about">About</a> |
-    <a data-target="experience">Experience</a> |
-    <a data-target="expertise">Expertise</a> |
-    <a data-target="education">Education</a> |
-    <a data-target="achievements">Achievements</a> |
-    <a data-target="current-projects">Current Projects</a>
+    <a href="#about">About</a> |
+    <a href="#experience">Experience</a> |
+    <a href="#expertise">Expertise</a> |
+    <a href="#education">Education</a> |
+    <a href="#achievements">Achievements</a> |
+    <a href="#current-projects">Current Projects</a>
 </nav>
     
 <div class="container">
