@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Naresh Kumar's Portfolio</title>
 
     <!-- Font Loading -->
@@ -149,7 +149,20 @@
             position: relative;
         }
 
+        /* Adjust styles for screens smaller than 480px (typical mobile size) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
 
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+        }
 
         /* Make the image responsive */
         img {
@@ -165,12 +178,13 @@
         }
 
         #about img {
-            max-width: 20%;
+            max-width: 100%;
             height: auto;
             margin-bottom: 2rem;
         }
     </style>
 </head>
+<body>
 </html>
 
 
