@@ -29,11 +29,11 @@
     text-align: center;
     padding: 1rem 0;
     width: 100%;
-    position: fixed; /* Fixed positioning to keep the header at the top */
+    position: fixed;
     top: 0;
     left: 0;
-        }
-
+    z-index: 100; /* Ensure the header is on top of other content */
+                }
 
         nav {
     background: #222;
@@ -43,22 +43,24 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    position: fixed; /* Fixed positioning to keep the navigation at the top */
+    position: fixed;
     top: 60px; /* Adjust this value based on your header's height */
     left: 0;
-        }
+    z-index: 100; /* Ensure the navigation is on top of other content */
+            }
 
-
-
-.container {
+        .container {
     max-width: 1000px;
-    margin: 3rem auto; /* Add top margin to create space for header and navigation */
+    margin-top: 160px; /* Adjust this value based on the combined height of header and navigation */
     padding: 2rem;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: relative; /* Use relative positioning */
-}
+                }
 
+
+
+
+        
         h1 {
             margin-bottom: 1rem;
         }
