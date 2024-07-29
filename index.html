@@ -14,25 +14,50 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" />
     </noscript>
 
+    <!-- Smooth Scroll -->
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Global styles */
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
         }
 
         header {
-            background: #6B5B95;
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding: 1rem 0;
+            padding: 2rem 0;
             width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 100;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        header p {
+            margin: 0.5rem 0;
+        }
+
+        header a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            border: 2px solid white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        header a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         nav {
@@ -44,34 +69,36 @@
             justify-content: space-around;
             width: 100%;
             position: fixed;
-            top: 140px;
+            top: 0;
             left: 0;
             z-index: 100;
         }
 
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        nav a.active {
+            color: #50b3a2;
+            text-decoration: underline;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
         .container {
-            max-width: 1400px;
-            margin: 300px auto 0;
+            max-width: 1200px;
+            margin: 100px auto 0;
             padding: 2rem;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        h1 {
-            margin-bottom: 1rem;
-        }
-
         h2 {
             color: #333;
-        }
-
-        a {
-            color: #50b3a2;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
 
         ul {
@@ -88,7 +115,7 @@
             padding: 2rem;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 0.5rem;
+            margin-bottom: 2rem;
         }
 
         .section:nth-child(odd) {
@@ -113,11 +140,6 @@
         .experience-item:last-child,
         .education-item:last-child {
             border-bottom: none;
-        }
-
-        nav a.active {
-            color: #50b3a2;
-            text-decoration: underline;
         }
 
         .section {
@@ -170,18 +192,18 @@
         </p>
     </header>
     <nav>
-        <a data-target="about">About</a> |
-        <a data-target="experience">Experience</a> |
-        <a data-target="expertise">Expertise</a> |
-        <a data-target="education">Education</a> |
-        <a data-target="achievements">Achievements</a> |
-        <a data-target="current-projects">Current Projects</a>
+        <a href="#about" class="active">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#current-projects">Current Projects</a>
     </nav>
 
     <div class="container">
         <section class="section active" id="about">
-            <h2>About me</h2>
-            <div class="about-item">
+            <h2>About Me</h2>
+            <div class="about-content">
                 <img src="https://github.com/Nashbrendan/nashbrendan.github.io/blob/main/Portfolio%20Images/S__14581762.jpg?raw=true" alt="Naresh Kumar">
                 <div class="spacing">
                     <ul>
@@ -353,7 +375,7 @@
                 event.target.classList.add('active');
 
                 // Get the target section ID
-                const targetSectionId = event.target.getAttribute('data-target');
+                const targetSectionId = event.target.getAttribute('href').substring(1);
 
                 // Remove active class from all sections
                 sections.forEach(section => {
