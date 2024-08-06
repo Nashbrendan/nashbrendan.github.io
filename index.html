@@ -2,368 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naresh Kumar's Portfolio</title>
-
-    <!-- Font Loading -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" />
-    </noscript>
-
-    <style>
-        /* Global styles */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-
-        header {
-            background: #6B5B95;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 100;
-        }
-
-        nav {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            position: fixed;
-            top: 140px;
-            left: 0;
-            z-index: 100;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 300px auto 0;
-            padding: 2rem;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        a {
-            color: #50b3a2;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .section .spacing ul {
-            margin: 0;
-        }
-
-        .section {
-            background-color: #f2e6ff;
-            padding: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 0.5rem;
-        }
-
-        .section:nth-child(odd) {
-            background-color: #EBF5FB;
-        }
-
-        .section:nth-child(even) {
-            background-color: #E8F8F5;
-        }
-
-        .spacing ul li {
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-item,
-        .education-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .experience-item:last-child,
-        .education-item:last-child {
-            border-bottom: none;
-        }
-
-        nav a.active {
-            color: #50b3a2;
-            text-decoration: underline;
-        }
-
-        .section {
-            opacity: 0;
-            transition: opacity 1.5s;
-            position: absolute;
-            width: 100%;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .section.active {
-            animation: fadeIn 1.5s ease-in-out forwards;
-            position: relative;
-        }
-
-        img {
-            max-width: 20%;
-            height: auto;
-        }
-
-        #about .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #about img {
-            max-width: 20%;
-            height: auto;
-            margin-bottom: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Naresh Kumar</h1>
-        <p>
-            <a href="mailto:nkncku@gmail.com">nkncku@gmail.com</a> |
-            <a href="tel:+886981800493">(+886) 981800493</a> |
-            <a href="https://linkedin.com/in/nashbrendan/" target="_blank">LinkedIn</a> |
-            Taipei, Taiwan
-        </p>
+        <div class="container">
+            <h1>Naresh Kumar</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <a data-target="about">About</a> |
-        <a data-target="experience">Experience</a> |
-        <a data-target="expertise">Expertise</a> |
-        <a data-target="education">Education</a> |
-        <a data-target="achievements">Achievements</a> |
-        <a data-target="current-projects">Current Projects</a>
-    </nav>
 
-    <div class="container">
-        <section class="section active" id="about">
-            <h2>About me</h2>
-            <div class="about-item">
-                <img src="https://github.com/Nashbrendan/nashbrendan.github.io/blob/main/Portfolio%20Images/S__14581762.jpg?raw=true" alt="Naresh Kumar">
-                <div class="spacing">
-                    <ul>
-                        <li>I am a seasoned professional with a versatile background encompassing project management, technical leadership, and process optimization, specializing in the management of advanced liquid cooling solutions for data centers.</li>
-                        <li>Throughout my career, I have demonstrated a mastery of thermal modules, spearheading multimillion-dollar projects as TPM, advocating for customers as QPM, and led NPI initiatives for Fortune 100 companies.</li>
-                        <li>My skill set extends to technical advisement, leveraging cutting-edge design tools, and refining cooling strategies tailored for Data center application & ADAS technology. A focal point of my expertise involves overseeing new manufacturing plants, drafting supplier audits, second source identification, assisting on process approvals. I have worked with both waterfall & Agile methodologies.</li>
-                        <li>As a Technical Program Manager (TPM), I leveraged my technical expertise to guide my team in resolving quality issues. Recognizing the impact of my contributions, my role evolved into a Quality Program Manager (QPM). Here, my primary focus was on meticulously completing SCAR reports, conducting Failure Analysis (FA), and identifying root causes, whether they were design-related, process-related, or tied to other factors. I was entrusted with leading critical quality issues, representing our company before customers. Notably, a senior figure from a prominent customer praised my adeptness in leading substantial discussions—a compliment that speaks volumes.</li>
-                        <li>Armed with a Six Sigma Black Belt certification, I've not only fortified my technical prowess but also harnessed it to steer pivotal changes in quality management. Through this journey, I've recognized that Six Sigma isn't just a certification—it's a guiding philosophy. It compels me to meticulously analyze, strategize, and execute with a laser focus on quality enhancement. This approach, coupled with my innate leadership and problem-solving skills, amplifies my role as a Six Sigma Black Belt-certified professional, equipped to not only address challenges but transform them into opportunities for excellence.</li>
-                    </ul>
-                </div>
+    <section id="hero">
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>I'm a Senior Thermal Mechanical Engineer passionate about thermal design and analysis.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>With over 10 years of experience, I specialize in creating innovative thermal solutions for a variety of applications. My expertise lies in thermo-mechanical design, program management, and collaborating with cross-functional teams to achieve outstanding results.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>A brief description of the project.</p>
             </div>
-        </section>
-
-        <section class="section" id="experience">
-            <h2>Professional Experience</h2>
-            <div class="experience-item">
-                <h3>Cooler Master, Taipei, Taiwan</h3>
-                <p><strong>TPM | QPM</strong> | Jan 2021–Present</p>
-                <div class="spacing">
-                    <ul>
-                        <li>Acted as a TPM for 4+ thermal module projects such as CDU, Cold plate liquid cooling system for top-tier technology giants</li>
-                        <li>Overseen 2 major factory transitions from initial factory setup to production line development</li>
-                        <li>Collaborated with cross-functional teams to establish a fully functional and equipped reliability laboratory, complete with state-of-the-art facilities such as X-ray CT, HALT, CMM, OMM, SEM, and OES.</li>
-                        <li>Act as a Voice of the Customer (VOC) for the internal product development team in developing complex thermal modules such as Cooling Distribution Units (CDUs), Open Loop technologies, and Closed Loop technologies to meet the design of excellence.</li>
-                        <li>Overseen & approved 40+ Process optimization methodologies using a data-driven approach.</li>
-                        <li>Devised and executed optimized plans for cycle time reduction during the ramp-up phase.</li>
-                        <li>Led & resolved 55+ FACA discussions using 8D problem-solving techniques.</li>
-                        <li>Created and implemented PMO best practices to ensure alignment using agile methodology.</li>
-                        <li>Implemented a risk management system for a high-volume manufacturing project which improved the yield by 8%.</li>
-                        <li>Fostered a culture of robust & comprehensive documentation both internally and externally reducing a number of customer support requests by 45% last year utilizing Lean Six Sigma principle.</li>
-                    </ul>
-                </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>A brief description of the project.</p>
             </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </section>
 
-            <div class="experience-item">
-                <h3>Wisdom Marine (Genius star), Taipei, Taiwan</h3>
-                <p><strong>Research & Development Engineer</strong> | Jan 2019–Dec 2020</p>
-                <div class="spacing">
-                    <ul>
-                        <li>Constructed a reusable thermal simulation model for the ship engine room to assimilate the overall flow effectiveness.</li>
-                        <li>Part of a development team on the scrubber design system for ship exhaust emission reduction.</li>
-                        <li>Formulated a simulation model for scrubber design configuration on one of the largest vessels.</li>
-                        <li>Led the team for the first green energy shipping model in Taiwan.</li>
-                        <li>Developed a green energy shipping model which saves 5.5% annual energy.</li>
-                    </ul>
-                </div>
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Thermal Design and Analysis</li>
+                <li>Program Management</li>
+                <li>Team Collaboration</li>
+                <li>Customer Needs Reflection</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="https://formspree.io/YOUR_EMAIL" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Naresh Kumar. All rights reserved.</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <!-- Add more social links as needed -->
             </div>
-
-            <div class="experience-item">
-                <h3>Armattan Quads, Kaoshuing, Taiwan</h3>
-                <p><strong>Engineer</strong> | Mar 2016–Oct 2018</p>
-                <div class="spacing">
-                    <ul>
-                        <li>Design, Develop & implement vortex reduction techniques in quad rotary blades.</li>
-                        <li>Aerodynamic profile creation for the racing quads with improved efficiency during the vertical takeoff.</li>
-                        <li>Integrated advanced carbon fiber technology into the quad body which led to 40% overall weight reduction.</li>
-                        <li>Worked throughout 2 project lifecycle of quads from Design Phase to EOL.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="expertise">
-            <h2>Professional Expertise</h2>
-            <div class="spacing">
-                <ul>
-                    <li>Experience Managing NPI projects for FAANG industries</li>
-                    <li>Overseen New plant setup for MP transition from China to Taiwan</li>
-                    <li>Customer Champion, maintaining direct relationship with key stakeholders</li>
-                    <li>Key speaker on board member meetings regarding project deliverables</li>
-                    <li>Technical advisor for internal cross-functional teams over new product introduction & process improvements</li>
-                    <li>Designed & optimized liquid cooling solutions for ADAS technology</li>
-                    <li>Brought down project operational cost by 20% by improving packaging methodology</li>
-                    <li>Agile project management methodology experience for project ramp-up</li>
-                    <li>Creating & executing against project plans for betterment of the company</li>
-                    <li>Certified Six Sigma Black Belt holder</li>
-                    <li>Familiar with 8D methodologies, 5 Why’s and Fishbone</li>
-                    <li>CAB, SCAR committee member</li>
-                    <li>Knowledge on Statistical analysis using MINITAB, Python, SQL</li>
-                    <li>Product reliability testing using Environmental stress testing tools for ALT, HALT analysis</li>
-                    <li>Knowledge on manufacturing techniques such as stamping, forging, & brazing techniques.</li>
-                    <li>Supply chain sustainability and resilience initiatives for second source identification</li>
-                    <li>Organize and facilitate supplier audits</li>
-                    <li>Handling risk management tracker</li>
-                </ul>
-            </div>
-
-            <h2>Academic Expertise</h2>
-            <div class="spacing">
-                <ul>
-                    <li>International Journal of Engineering Research & Technology - Low NOx Emission with Improved Performance of the Gas Turbine Engine - Volume 2, Issue 11, 2013</li>
-                    <li>International Conference on Innovative Design, Analysis and Development Practices in Aerospace & Automobile Engineering - Preliminary Design of a Turbine for Energy Recovery System for Ballistic Missile, 2014</li>
-                    <li>Shortlisted for ICCNA conference on Rocket Propulsion System - Dubai, 2014</li>
-                    <li>13th International Conference on Liquid Atomization and Spray Systems, ICLASS 2015, Taiwan. - Measurements of fuel centered kerosene/N2O coaxial injector: Cold flow and hot fire test.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section" id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>National Cheng Kung University</h3>
-                <p><strong>Masters of Science in Aerospace Engineering</strong></p>
-                <p>Tainan, Taiwan</p>
-                <h3>Research Projects</h3>
-                <div class="spacing">
-                    <ul>
-                        <li>Measurement of fuel centered kerosene/N2O coaxial injector with cold flow & hot fire testing</li>
-                        <li>Numerical analysis on combustion characterization of gas centered swirl coaxial injector</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="education-item">
-                <h3>Vel Tech University</h3>
-                <p><strong>Bachelors of Technology in Aeronautical Engineering</strong></p>
-                <p>Chennai, India</p>
-                <h3>Research Projects</h3>
-                <div class="spacing">
-                    <ul>
-                        <li>Design, Modelling, Fabrication & Testing of hybrid rocket engine</li>
-                        <li>Preliminary Design of a turbine for energy recovery system for ballistic missile</li>
-                        <li>CFD analysis of Drag reduction on heavy automobiles using rotary cylinders</li>
-                        <li>Experimental study of passive damping techniques in Liquid rocket system</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="achievements">
-            <h2>Achievements</h2>
-            <div class="spacing">
-                <ul>
-                    <li>Led the first Green ENERGY projects for shipping vessels in Taiwan in 2019.</li>
-                    <li>Simulated the first scrubber installation in the Taiwan shipping industry. (installed in 2020)</li>
-                    <li>Six Sigma Black Belt Affidavit approved with just 1 year of TPM experience by resolving 2 on-field quality issues during 2021-2022.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section" id="current-projects">
-            <h2>Current Projects</h2>
-            <div class="spacing">
-                <ul>
-                    <li>Enrolled for Supply Chain Analytics course at Massachusetts Institute of Technology MicroMasters® Programs _ Sep - Dec 2023.</li>
-                    <li>Automating the daily production report using Python to perform Correlation matrix, T & P valve analysis. The key outcome was to understand the outlier with the equipment setup & its testing parameter in a micro level for production NG parts _ July - Aug 2023.</li>
-                    <li>Design of side flow cold plate for ADAS technology _ Oct 2022.</li>
-                    <li>Performed a flow analysis to evaluate the performance of a side flow coldplate and an impinged flow coldplate using FloEFD.</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-
-    <script>
-        // JavaScript code for handling navigation animation
-        const navLinks = document.querySelectorAll('nav a');
-        const sections = document.querySelectorAll('.section');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', event => {
-                event.preventDefault();
-
-                // Remove active class from all links
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-
-                // Add active class to the clicked link
-                event.target.classList.add('active');
-
-                // Get the target section ID
-                const targetSectionId = event.target.getAttribute('data-target');
-
-                // Remove active class from all sections
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                });
-
-                // Add active class to the target section
-                document.getElementById(targetSectionId).classList.add('active');
-            });
-        });
-    </script>
+        </div>
+    </footer>
 </body>
 </html>
